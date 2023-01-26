@@ -31,7 +31,7 @@ namespace Summator
             return sum / arr.Length;
         }   
 
-    /* ----------------------------------------------- */
+    /* -----------------There be more testing here------------------------------ */
       
                  public static void Test_SumTwoNumbers()
                   {
@@ -44,8 +44,6 @@ namespace Summator
                       }
                   } 
 
-
-            
     }
 }
     //changes
