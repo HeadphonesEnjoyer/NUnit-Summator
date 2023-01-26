@@ -13,23 +13,26 @@ namespace Summator
         {
            
                 double sum = 0;
-                    for (int i = 0; i < arr.Length; i++)
-                        sum += arr[i];
-            return sum;
-                    }
-
-       /*      public static class Summator
-        {
-            public static long Sum(int[] arr)
+            for (int i = 0; i < arr.Length; i++)
             {
-                {
+                sum += arr[i];
+            }
+            return sum;
+        }
 
-                    long sum = 0;
-                    for (int i = 0; i < arr.Length; i++)
-                        sum += arr[i];
-                    return sum;
-                }
-       ----------------------------------------------------------
+        public static double Average(int[] arr)
+        {
+            double sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            //return sum
+            return sum / arr.Length;
+        }   
+
+    /* ----------------------------------------------- */
+      
                  public static void Test_SumTwoNumbers()
                   {
                       if (Sum(new int[] { 1, 2 }) != 3)
@@ -39,10 +42,10 @@ namespace Summator
                       {
                           Console.WriteLine("Test pass!");
                       }
-                  } */
+                  } 
 
 
             
-        }
+    }
 }
     //changes

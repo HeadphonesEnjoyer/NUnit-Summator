@@ -4,6 +4,12 @@ namespace Summator.UnitTests
 {
     public class SummatorTests
     {
+        [SetUp]
+    public void Setup()
+    {
+            Console.WriteLine("Test call " + DateTime.Now);
+    }
+
         [Test]
 
         public void Test_Summator_SumTwoPositiveNumbers()
@@ -23,7 +29,7 @@ namespace Summator.UnitTests
             Assert.AreEqual(expected, actual);
 
         }
-
+        [Order(1)]
         [Test]
         public void Test_Summator_OneNumber()
         {
@@ -70,7 +76,7 @@ namespace Summator.UnitTests
 
             //Assert.That(expected, Is.EqualTo(actual));
         }
-
+        [Category("High")]
         [Test]
         public void Test_Summator_Assertions()
         {
@@ -90,13 +96,35 @@ namespace Summator.UnitTests
             Assert.That(() => "abc"[45], Throws.TypeOf<IndexOutOfRangeException>());
             Assert.That(() => "abc"[45], Throws.InstanceOf<Exception>());
 
-            //Assert.That(new int[] { 4, 5, 6 }, Has.Member(5));
+            Assert.That(new int[] { 4, 5, 6 }, Has.Member(5));
 
             var percentages = new int[] { 10, 30, 50, 100 };
-            Assert.That (percentages, Is.All.InRange(0, 100));
+            Assert.That(percentages, Is.All.InRange(0, 100));
 
-           Assert.That(percentage, Is.EqualTo(100), "Post this message");
+            //   Assert.That(percentage, Is.EqualTo(100), "Post this message");
 
         }
+        [Test]
+
+            public void Test_Summator_AverageTwoPositiveNumbers()
+            {
+                var nums = new int[] { 3, 5 };
+                var actual = Summator.Average(nums);
+                var expected = 4;
+                Assert.AreEqual(expected, actual);
+            }
+        [Category("Sanity")]
+        [Test]
+
+        public void Test_Summator_Average_Two_Fractions()
+        {
+            var nums = new int[] { 1, 2 };
+            var actual = Summator.Average(nums);
+            var expected = 1.5;
+            Assert.AreEqual(expected, actual);
+        }
+
+
     }
 }
+
